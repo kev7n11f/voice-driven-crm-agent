@@ -106,6 +106,84 @@ cp config.example.json config.json
 
 4. Fill in your Azure Speech, Azure OpenAI, Work IQ, and webhook settings in `config.json`.
 
+## Key Setup
+
+Set the following values in `config.json`:
+
+- `azure_speech_key`
+- `azure_speech_region`
+- `azure_openai_endpoint`
+- `azure_openai_key`
+- `azure_openai_model` (use your Azure OpenAI deployment name, for example `gpt-4o`)
+- `work_iq_endpoint`
+- `work_iq_key`
+- `webhook_url`
+
+Where to get each value:
+
+1. Azure AI Speech (`azure_speech_key`, `azure_speech_region`)
+- Create resource: https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices
+- In Azure Portal, open your Speech resource, then go to **Keys and Endpoint**.
+- Use **Key 1** or **Key 2** for `azure_speech_key`.
+- Use the resource region (for example `eastus`) for `azure_speech_region`.
+- Docs: https://learn.microsoft.com/azure/ai-services/speech-service/get-started-speech-to-text
+
+2. Azure OpenAI (`azure_openai_endpoint`, `azure_openai_key`, `azure_openai_model`)
+- Create resource: https://portal.azure.com/#create/Microsoft.CognitiveServicesOpenAI
+- In Azure Portal or Azure AI Foundry, deploy your model.
+- Use **Keys and Endpoint** for `azure_openai_key` and `azure_openai_endpoint`.
+- Use your deployment name for `azure_openai_model`.
+- Docs:
+    - https://learn.microsoft.com/azure/ai-services/openai/how-to/create-resource
+    - https://learn.microsoft.com/azure/ai-services/openai/how-to/create-deployments
+
+3. Work IQ (`work_iq_endpoint`, `work_iq_key`)
+- Create or open an API integration in your Work IQ tenant/admin portal.
+- Copy the API endpoint URL and generated API key/token.
+
+4. Webhook (`webhook_url`)
+- Quick testing endpoint: https://webhook.site
+- Production: your CRM ingestion endpoint.
+
+Secret safety:
+
+- Never commit real keys to git.
+- Keep secrets only in local `config.json`.
+- Rotate keys after demos.
+
+## Dependencies
+
+Primary dependency files:
+
+- `requirements.txt`
+- `requirements-dev.txt`
+
+Package sources:
+
+- Python (Windows): https://www.python.org/downloads/windows/
+- requests: https://pypi.org/project/requests/
+- pytest: https://pypi.org/project/pytest/
+- Azure Speech SDK for Python: https://pypi.org/project/azure-cognitiveservices-speech/
+- uv (optional Python/runtime manager): https://docs.astral.sh/uv/
+
+Install options:
+
+1. Standard pip setup:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Linux/macOS
+# or
+.venv\Scripts\activate     # Windows
+pip install -r requirements-dev.txt
+```
+
+2. uv setup (works without system Python):
+
+```bash
+uv run --python 3.12 --with pytest --with requests --with azure-cognitiveservices-speech pytest -q
+```
+
 ## If Python Is Not Available Locally
 
 You can still run tests using `uv` (which can manage Python for you):
