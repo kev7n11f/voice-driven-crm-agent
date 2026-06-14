@@ -93,7 +93,7 @@ source .venv/bin/activate  # Linux/macOS
 2. Install dependencies.
 
 ```bash
-pip install requests pytest azure-cognitiveservices-speech
+pip install -r requirements-dev.txt
 ```
 
 3. Copy the example config and update values.
@@ -105,6 +105,14 @@ cp config.example.json config.json
 ```
 
 4. Fill in your Azure Speech, Azure OpenAI, Work IQ, and webhook settings in `config.json`.
+
+## If Python Is Not Available Locally
+
+You can still run tests using `uv` (which can manage Python for you):
+
+```bash
+uv run --python 3.12 --with pytest --with requests --with azure-cognitiveservices-speech pytest -q
+```
 
 ## Run The Agent
 
@@ -140,6 +148,12 @@ The agent sends the structured CRM payload with `Content-Type: application/json`
 
 ```bash
 pytest -q
+```
+
+On Windows (if PATH is not refreshed yet), you can run `uv` by full path:
+
+```bash
+C:/Users/<YOUR_USER>/.local/bin/uv.exe run --python 3.12 --with pytest --with requests --with azure-cognitiveservices-speech pytest -q
 ```
 
 ## Disclaimer
