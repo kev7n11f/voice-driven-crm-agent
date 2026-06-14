@@ -1,0 +1,10 @@
+{
+  "contact_name": "Alicia Gomez",
+  "company": "Northwind Logistics",
+  "phone": "+1 206-555-0189",
+  "email": "alicia.gomez@northwindlogistics.com",
+  "interaction_summary": "Customer requested a product demo for the premium plan and asked for pricing details by next week.",
+  "lead_status": "Qualified",
+  "next_action": "Send pricing sheet and schedule demo call",
+  "timestamp": "2026-06-14T10:00:00+00:00"
+}

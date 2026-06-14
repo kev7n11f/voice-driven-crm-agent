@@ -1,0 +1,10 @@
+{
+  "azure_speech_key": "YOUR_AZURE_SPEECH_KEY",
+  "azure_speech_region": "YOUR_AZURE_SPEECH_REGION",
+  "azure_openai_endpoint": "YOUR_AZURE_OPENAI_ENDPOINT",
+  "azure_openai_key": "YOUR_AZURE_OPENAI_KEY",
+  "azure_openai_model": "gpt-4o",
+  "work_iq_endpoint": "YOUR_WORK_IQ_ENDPOINT",
+  "work_iq_key": "YOUR_WORK_IQ_KEY",
+  "webhook_url": "YOUR_WEBHOOK_URL"
+}
