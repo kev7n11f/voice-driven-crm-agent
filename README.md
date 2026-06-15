@@ -1,8 +1,8 @@
 # Voice-Driven CRM Input Agent
 
-Voice-Driven CRM Input Agent is an enterprise-style Python agent that converts spoken customer interactions into structured CRM records.
+Voice-Driven CRM Input Agent is a creative productivity application that transforms spoken customer conversations into polished CRM entries.
 
-It is designed for the Microsoft Agents League Hackathon and demonstrates a practical end-to-end workflow using Azure AI Speech, Azure OpenAI GPT-4o, Work IQ context grounding, local JSON persistence, and webhook delivery.
+It is designed for the Microsoft Agents League Hackathon Creative Apps track and demonstrates an end-to-end flow using Azure AI Speech, Azure OpenAI GPT-4o, Work IQ grounding, local JSON persistence, and webhook delivery.
 
 ## Overview
 
@@ -17,6 +17,22 @@ The agent takes either an audio file or microphone input, transcribes the conver
 - Webhook sender for CRM integration workflows
 - CLI-based orchestration with readable output
 - Basic tests for extraction and storage
+
+## Creative Apps Track Fit
+
+This project aligns with Creative Apps as a creative productivity tool that remixes unstructured voice into structured business-ready output.
+
+- Creative concept: turn free-form conversation into high-quality CRM narrative + action plan.
+- User value: saves manual note-taking and creates consistent follow-up guidance.
+- Interaction style: voice-first input with AI-assisted transformation.
+
+Challenge requirement mapping:
+
+1. GitHub Copilot usage (required): development prompts and implementation workflow are documented in `copilot.md`.
+2. Microsoft IQ integration (required): Work IQ is integrated as optional grounding in `src/extraction.py`; when configured, it enriches extraction context.
+3. Creative application (required): this is a creative productivity app that transforms raw interactions into structured artifacts.
+
+Important note: the `m365-enterprise-agent` folder is optional experimental work and is not required for this Creative Apps submission path.
 
 ## Architecture
 
@@ -105,6 +121,10 @@ cp config.example.json config.json
 ```
 
 4. Fill in your Azure Speech, Azure OpenAI, Work IQ, and webhook settings in `config.json`.
+
+Optional cleanup for this track:
+
+- If you want a cleaner submission, you can leave `m365-enterprise-agent` unmodified and focus only on this root Python app.
 
 ## Key Setup
 
@@ -233,6 +253,14 @@ On Windows (if PATH is not refreshed yet), you can run `uv` by full path:
 ```bash
 C:/Users/<YOUR_USER>/.local/bin/uv.exe run --python 3.12 --with pytest --with requests --with azure-cognitiveservices-speech pytest -q
 ```
+
+## Quick Submission Checklist
+
+1. Confirm tests pass (`pytest -q` or `uv run ... pytest -q`).
+2. Ensure `config.json` is not committed.
+3. Capture one demo run output in `demo/sample_output.json`.
+4. Add screenshots in `demo/screenshots.md`.
+5. In your project description, state that Work IQ is used for grounding when configured.
 
 ## Disclaimer
 

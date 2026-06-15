@@ -1,0 +1,42 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.27/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.27",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "Voice-Driven CRM Agent",
+        "websiteUrl": "https://github.com/kev7n11f/voice-driven-crm-agent",
+        "privacyUrl": "https://github.com/kev7n11f/voice-driven-crm-agent/blob/main/README.md",
+        "termsOfUseUrl": "https://github.com/kev7n11f/voice-driven-crm-agent/blob/main/LICENSE"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Voice CRM Agent${{APP_NAME_SUFFIX}}",
+        "full": "Voice-Driven CRM Creative Productivity Agent"
+    },
+    "description": {
+        "short": "Convert spoken customer conversations into structured CRM-ready entries.",
+        "full": "A Creative Apps project that transforms voice interactions into clean CRM records with summaries, lead status, next actions, and webhook-ready payloads."
+    },
+    "accentColor": "#FFFFFF",
+    "supportsChannelFeatures": "tier1",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [            
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "validDomains": [
+        "webhook.site"
+    ]
+}
